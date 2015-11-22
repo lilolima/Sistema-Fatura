@@ -22,7 +22,7 @@ import java.awt.FlowLayout;
 import java.awt.CardLayout;
 import javax.swing.JButton;
 
-public class ClienteBoundary extends JFrame {
+public class UsuarioBoundary extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -40,10 +40,15 @@ public class ClienteBoundary extends JFrame {
 	private JTable table;
 	private JPanel paneNavegacao;
 	private JPanel paneEdicao;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
-	private JButton btnNewButton_2;
-	private JButton btnNewButton_3;
+	private JButton btnPrimeiro;
+	private JButton btnAnterior;
+	private JButton btnProximo;
+	private JButton btnUltimo;
+	private JButton btnNovo;
+	private JButton btnSalvar;
+	private JButton btnExcluir;
+	private JButton btnEditar;
+	private JButton btnBuscar;
 
 	/**
 	 * Launch the application.
@@ -52,7 +57,7 @@ public class ClienteBoundary extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ClienteBoundary frame = new ClienteBoundary();
+					UsuarioBoundary frame = new UsuarioBoundary();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -64,7 +69,8 @@ public class ClienteBoundary extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ClienteBoundary() {
+	public UsuarioBoundary() {
+		setTitle("Usuário");
 		setBackground(new Color(100, 149, 237));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 701, 463);
@@ -78,7 +84,7 @@ public class ClienteBoundary extends JFrame {
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
-		JLabel lblNewLabel = new JLabel("ID Cliente : *");
+		JLabel lblNewLabel = new JLabel("ID Usu\u00E1rio : *");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
@@ -217,36 +223,33 @@ public class ClienteBoundary extends JFrame {
 		gbl_paneNavegacao.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		paneNavegacao.setLayout(gbl_paneNavegacao);
 		
-		btnNewButton = new JButton("New button");
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridheight = 2;
-		gbc_btnNewButton.insets = new Insets(0, 0, 0, 5);
-		gbc_btnNewButton.gridx = 0;
-		gbc_btnNewButton.gridy = 1;
-		paneNavegacao.add(btnNewButton, gbc_btnNewButton);
+		btnPrimeiro = new JButton("Primeiro");
+		GridBagConstraints gbc_btnPrimeiro = new GridBagConstraints();
+		gbc_btnPrimeiro.insets = new Insets(0, 0, 5, 5);
+		gbc_btnPrimeiro.gridx = 0;
+		gbc_btnPrimeiro.gridy = 1;
+		paneNavegacao.add(btnPrimeiro, gbc_btnPrimeiro);
 		
-		btnNewButton_1 = new JButton("New button");
-		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
-		gbc_btnNewButton_1.gridheight = 2;
-		gbc_btnNewButton_1.insets = new Insets(0, 0, 0, 5);
-		gbc_btnNewButton_1.gridx = 1;
-		gbc_btnNewButton_1.gridy = 1;
-		paneNavegacao.add(btnNewButton_1, gbc_btnNewButton_1);
+		btnAnterior = new JButton("Anterior");
+		GridBagConstraints gbc_btnAnterior = new GridBagConstraints();
+		gbc_btnAnterior.insets = new Insets(0, 0, 5, 5);
+		gbc_btnAnterior.gridx = 1;
+		gbc_btnAnterior.gridy = 1;
+		paneNavegacao.add(btnAnterior, gbc_btnAnterior);
 		
-		btnNewButton_2 = new JButton("New button");
-		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
-		gbc_btnNewButton_2.gridheight = 2;
-		gbc_btnNewButton_2.insets = new Insets(0, 0, 0, 5);
-		gbc_btnNewButton_2.gridx = 2;
-		gbc_btnNewButton_2.gridy = 1;
-		paneNavegacao.add(btnNewButton_2, gbc_btnNewButton_2);
+		btnProximo = new JButton("Proximo");
+		GridBagConstraints gbc_btnProximo = new GridBagConstraints();
+		gbc_btnProximo.insets = new Insets(0, 0, 5, 5);
+		gbc_btnProximo.gridx = 2;
+		gbc_btnProximo.gridy = 1;
+		paneNavegacao.add(btnProximo, gbc_btnProximo);
 		
-		btnNewButton_3 = new JButton("New button");
-		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
-		gbc_btnNewButton_3.gridheight = 2;
-		gbc_btnNewButton_3.gridx = 3;
-		gbc_btnNewButton_3.gridy = 1;
-		paneNavegacao.add(btnNewButton_3, gbc_btnNewButton_3);
+		btnUltimo = new JButton("Ultimo");
+		GridBagConstraints gbc_btnUltimo = new GridBagConstraints();
+		gbc_btnUltimo.insets = new Insets(0, 0, 5, 0);
+		gbc_btnUltimo.gridx = 3;
+		gbc_btnUltimo.gridy = 1;
+		paneNavegacao.add(btnUltimo, gbc_btnUltimo);
 		
 		paneEdicao = new JPanel();
 		GridBagConstraints gbc_paneEdicao = new GridBagConstraints();
@@ -256,7 +259,46 @@ public class ClienteBoundary extends JFrame {
 		gbc_paneEdicao.gridx = 2;
 		gbc_paneEdicao.gridy = 8;
 		contentPane.add(paneEdicao, gbc_paneEdicao);
-		paneEdicao.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		GridBagLayout gbl_paneEdicao = new GridBagLayout();
+		gbl_paneEdicao.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gbl_paneEdicao.rowHeights = new int[]{0, 0, 0};
+		gbl_paneEdicao.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_paneEdicao.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		paneEdicao.setLayout(gbl_paneEdicao);
+		
+		btnNovo = new JButton("Novo");
+		GridBagConstraints gbc_btnNovo = new GridBagConstraints();
+		gbc_btnNovo.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNovo.gridx = 1;
+		gbc_btnNovo.gridy = 1;
+		paneEdicao.add(btnNovo, gbc_btnNovo);
+		
+		btnSalvar = new JButton("Salvar");
+		GridBagConstraints gbc_btnSalvar = new GridBagConstraints();
+		gbc_btnSalvar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnSalvar.gridx = 2;
+		gbc_btnSalvar.gridy = 1;
+		paneEdicao.add(btnSalvar, gbc_btnSalvar);
+		
+		btnExcluir = new JButton("Excluir");
+		GridBagConstraints gbc_btnExcluir = new GridBagConstraints();
+		gbc_btnExcluir.insets = new Insets(0, 0, 0, 5);
+		gbc_btnExcluir.gridx = 3;
+		gbc_btnExcluir.gridy = 1;
+		paneEdicao.add(btnExcluir, gbc_btnExcluir);
+		
+		btnEditar = new JButton("Editar");
+		GridBagConstraints gbc_btnEditar = new GridBagConstraints();
+		gbc_btnEditar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnEditar.gridx = 4;
+		gbc_btnEditar.gridy = 1;
+		paneEdicao.add(btnEditar, gbc_btnEditar);
+		
+		btnBuscar = new JButton("Buscar");
+		GridBagConstraints gbc_btnBuscar = new GridBagConstraints();
+		gbc_btnBuscar.gridx = 5;
+		gbc_btnBuscar.gridy = 1;
+		paneEdicao.add(btnBuscar, gbc_btnBuscar);
 	}
 
 }
